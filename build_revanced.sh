@@ -94,7 +94,10 @@ if [ -f "com.google.android.youtube.apk" ]; then
         $EXPERIMENTAL \
         -a com.google.android.youtube.apk -o build/revanced-root.apk
     echo "Building Non-root APK"
-    java -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar \
+    
+
+java -jar revanced-cli.jar -a youtube.apk -c -o revanced.apk -b revanced-patches.jar -m integrations.apk -i general-resource-ads -i general-ads -i video-ads -i seekbar-tapping -i amoled -i premium-heading -i custom-branding -i hide-cast-button -i minimized-playback -i integrations -i locale-config-fix -i resource-id-mapping-provider-resource-patch-dependency -i microg-support
+copy \
         ${patches[@]} \
         $EXPERIMENTAL \
         -a com.google.android.youtube.apk -o build/revanced-nonroot.apk
